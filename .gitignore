@@ -1,0 +1,7 @@
+# Secrets used by password_manager.py - never commit these
+key.key
+password.txt
+
+# Python
+__pycache__/
+.venv/
