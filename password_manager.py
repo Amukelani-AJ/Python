@@ -9,9 +9,9 @@ def write_key():
 
 def load_key():
     file = open("key.key","rb")
-    key = file.read()
+    key_val = file.read()
     file.close()
-    return key
+    return key_val
 
 
 master_password  = input("What is your master password: ")
@@ -26,14 +26,14 @@ def view():
             data = line.rstrip()
             #The split operator returns a list of values separated by the provided char
             account, passw = data.split("|")
-            print(f"Account :{account} |  Password:{passw}")
+            print(f"Account :{account} |  Password:{fer.decrypt(passw.encode()).decode()}")
 
 def add():
     name = input("Account Name: ")
     password = input("Password: ")
 
     with open('password.txt','a') as f:
-        f.write(f'{name} | {fer.encrypt(password.encode())} '+"\n")
+        f.write(f'{name} | {fer.encrypt(password.encode()).decode()} '+"\n")
 
 while True:
     mode = input("Would you like to add a new password or view the existing passwords? (View/Add) to proceed (Q to quite): ").lower()
