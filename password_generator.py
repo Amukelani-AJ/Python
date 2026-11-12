@@ -24,3 +24,20 @@ def generate_password(min_length,numbers=True,special_characters=True):
          new_char = random.choice(characters) # Pick a random value from the character string containing all possible chars
          password += new_char #Add the random char into the password
 
+         #Valid criteria check ( has digit & has number )
+         if new_char in digits:
+             has_number = True
+         elif new_char  in special:
+             has_special = True
+
+        #Validity criteri check on the parameters
+         meets_criteria = True
+         if numbers:
+             meets_criteria = has_number
+         if special_characters:
+             meets_criteria = meets_criteria and has_special
+
+    return password
+
+random_password = generate_password(10)
+print(random_password)
