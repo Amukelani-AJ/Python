@@ -39,5 +39,11 @@ def generate_password(min_length,numbers=True,special_characters=True):
 
     return password
 
-random_password = generate_password(10)
-print(random_password)
+#Prompt user for input
+password_length = int(input("Please enter the password length: "))
+contain_number = input("Do you want to include numbers in the password? ").lower() == "y"
+contains_special_char = input("Do you want to include special characters? ").lower() == "y"
+
+#Insert arguments in the function
+random_password = generate_password(password_length,contain_number,contains_special_char)
+print(f"The generated password is : {random_password}")
