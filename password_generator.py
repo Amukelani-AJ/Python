@@ -46,4 +46,4 @@ contains_special_char = input("Do you want to include special characters? ").low
 
 #Insert arguments in the function
 random_password = generate_password(password_length,contain_number,contains_special_char)
-print(f"The generated password is : {random_password}")
+print(f"The generated password is: {random_password}")
